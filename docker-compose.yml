@@ -1,0 +1,28 @@
+version: "3"
+
+services:
+
+  backend:
+    build: ./src
+    ports:
+      - "8001:8000"
+    env_file:
+      - config/django/.env
+    volumes:
+      - ./src:/code
+    depends_on:
+      - db
+
+  db:
+    image: mysql:8
+    ports:
+      - 3306:3306
+    volumes:
+      - db_data:/var/lib/mysql
+      - ./config/db/docker-entrypoint-initdb.d:/docker-entrypoint-initdb.d
+    env_file:
+      - config/db/.env
+
+
+volumes:
+  db_data:
