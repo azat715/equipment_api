@@ -12,13 +12,7 @@ from typing import List
 
 from django.core.exceptions import ValidationError
 
-mapping = {
-    "N": "[0-9]",
-    "A": "[A-Z]",
-    "a": "[a-z]",
-    "X": "[A-Z-0-9]",
-    "Z": "[_-@]"
-}
+mapping = {"N": "[0-9]", "A": "[A-Z]", "a": "[a-z]", "X": "[A-Z-0-9]", "Z": "[_-@]"}
 
 
 def convert(s: str) -> re.Pattern:
@@ -37,7 +31,5 @@ def convert(s: str) -> re.Pattern:
         arr: List[str] = [mapping[i] for i in s]
     except KeyError as e:
         raise ValidationError(f"Неправильная маска EqptType: {e}")
-        
-    return re.compile(f"^{''.join(arr)}$")
-            
 
+    return re.compile(f"^{''.join(arr)}$")

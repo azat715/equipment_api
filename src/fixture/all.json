@@ -1,0 +1,26 @@
+[
+{
+    "model": "main.eqpttype",
+    "pk": 1,
+    "fields": {
+        "name": "D-Link DIR-300",
+        "mask": "NXXAAXZXaa"
+    }
+},
+{
+    "model": "main.eqpttype",
+    "pk": 3,
+    "fields": {
+        "name": "TP-Link TL-WR74",
+        "mask": "XXAAAAAXAA"
+    }
+},
+{
+    "model": "main.eqpttype",
+    "pk": 4,
+    "fields": {
+        "name": "D-Link DIR-300 E",
+        "mask": "NAAAAXZXXX"
+    }
+}
+]

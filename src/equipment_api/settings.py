@@ -24,12 +24,12 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = env.str('DJANGO_SECRET_KEY')
+SECRET_KEY = env.str("DJANGO_SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = env.bool('DJANGO_DEBUG', True)
+DEBUG = env.bool("DJANGO_DEBUG", True)
 
-ALLOWED_HOSTS = env.list('ALLOWED_HOSTS')
+ALLOWED_HOSTS = env.list("ALLOWED_HOSTS")
 
 
 # Application definition
@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
+    "rest_framework",
     "main",
 ]
 
@@ -80,12 +81,12 @@ WSGI_APPLICATION = "equipment_api.wsgi.application"
 
 DATABASES = {
     "default": {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': env.str('DB_NAME'),
-        'USER': env.str('DB_USER'),
-        'PASSWORD': env.str('DB_PASSWORD'),
-        'HOST': env.str('DB_HOST'),
-        'PORT': env.int('DB_PORT', 3306),
+        "ENGINE": "django.db.backends.mysql",
+        "NAME": env.str("DB_NAME"),
+        "USER": env.str("DB_USER"),
+        "PASSWORD": env.str("DB_PASSWORD"),
+        "HOST": env.str("DB_HOST"),
+        "PORT": env.int("DB_PORT", 3306),
     }
 }
 
@@ -124,9 +125,8 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
-STATIC_URL = '/static/'
-STATIC_ROOT = BASE_DIR / "static",
-
+STATIC_URL = "/static/"
+STATIC_ROOT = (BASE_DIR / "static",)
 
 
 # Default primary key field type
