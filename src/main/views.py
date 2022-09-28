@@ -46,7 +46,7 @@ class EqptTypeListView(mixins.ListModelMixin, generics.GenericAPIView):
         return self.list(request, *args, **kwargs)
 
 
-class EqptListView(mixins.ListModelMixin, generics.GenericAPIView):
+class EqptListView(generics.ListCreateAPIView):
     """Eqpt"""
 
     # permission_classes = [IsAuthenticated]
